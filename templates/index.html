@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+<div class="container p-2">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron p-3 bg-light-subtle">
+
+                <h2>Choose the operation you want to perform below!</h2>
+
+               <ul>
+                   <li><button type="button" class="btn btn-primary" data-bs-toggle="modal", data-bs-target="#addmodal">Addition</button> </li>
+                   <li><button type="button" class="btn btn-secondary" data-bs-toggle="modal", data-bs-target="#submodal">Subtraction</button> </li>
+                   <li><button type="button" class="btn btn-success" data-bs-toggle="modal", data-bs-target="#multmodal">Multiplication</button> </li>
+                   <li><button type="button" class="btn btn-info" data-bs-toggle="modal", data-bs-target="#divmodal">Division</button> </li>
+               </ul>
+
+                <!-- Modal add numbers -->
+
+                <div id="addmodal" class="modal fade" role="dialog" aria-hidden="true">
+
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h4>Input two numbers:</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <form action="{{ url_for('add') }}" method="POST">
+                                        <div class="form-group">
+                                            <label>DATA1:</label>
+                                             <input type="text" class="form-control" placeholder="first data" name="a">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>DATA2:</label>
+                                             <input type="text" class="form-control" placeholder="second data" name="b">
+                                        </div>
+                                    <br>
+                                         <div class="form-group p-1">
+                                          <button class="btn btn-primary" type="submit">Submit</button>
+                                        </div>
+                                </form>
+
+                            <dev class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </dev>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Modal sub numbers -->
+                 <div id="submodal" class="modal fade" role="dialog" aria-hidden="true">
+
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h4>Input two numbers:</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <form action="{{ url_for('sub') }}" method="POST">
+                                        <div class="form-group">
+                                            <label>DATA1:</label>
+                                             <input type="text" class="form-control" placeholder="first data" name="a">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>DATA2:</label>
+                                             <input type="text" class="form-control" placeholder="second data" name="b">
+                                        </div>
+                                    <br>
+                                         <div class="form-group p-1">
+                                          <button class="btn btn-primary" type="submit">Submit</button>
+                                        </div>
+                                </form>
+
+                            <dev class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </dev>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Modal mult numbers -->
+                 <div id="multmodal" class="modal fade" role="dialog" aria-hidden="true">
+
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h4>Input two numbers:</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <form action="{{ url_for('mult') }}" method="POST">
+                                        <div class="form-group">
+                                            <label>DATA1:</label>
+                                             <input type="text" class="form-control" placeholder="first data" name="a">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>DATA2:</label>
+                                             <input type="text" class="form-control" placeholder="second data" name="b">
+                                        </div>
+                                    <br>
+                                         <div class="form-group p-1">
+                                          <button class="btn btn-primary" type="submit">Submit</button>
+                                        </div>
+                                </form>
+
+                            <dev class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </dev>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal div numbers -->
+                 <div id="divmodal" class="modal fade" role="dialog" aria-hidden="true">
+
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h4>Input two numbers:</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <form action="{{ url_for('div') }}" method="POST">
+                                        <div class="form-group">
+                                            <label>DATA1:</label>
+                                             <input type="text" class="form-control" placeholder="first data" name="a">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>DATA2:</label>
+                                             <input type="text" class="form-control" placeholder="second data" name="b">
+                                        </div>
+                                    <br>
+                                         <div class="form-group p-1">
+                                          <button class="btn btn-primary" type="submit">Submit</button>
+                                        </div>
+                                </form>
+
+                            <dev class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </dev>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
