@@ -15,7 +15,7 @@ def add():
         b = request.form['b']
 
         addition = float(a) + float(b)
-        return render_template('addresult.html', addition=addition)
+        return render_template('index.html', addition=addition)
 
 
 @app.route('/sub', methods=['GET', 'POST'])
@@ -25,7 +25,7 @@ def sub():
         b = request.form['b']
 
         subtraction = float(a) - float(b)
-        return render_template('subresult.html', subtraction=subtraction)
+        return render_template('index.html', subtraction=subtraction)
 
 
 @app.route('/mult', methods=['GET', 'POST'])
@@ -35,7 +35,7 @@ def mult():
         b = request.form['b']
 
         multiplication = float(a) * float(b)
-        return render_template('multresult.html', multiplication=multiplication)
+        return render_template('index.html', multiplication=multiplication)
 
 
 @app.route('/div', methods=['GET', 'POST'])
@@ -45,7 +45,7 @@ def div():
         b = request.form['b']
 
         division = float(a) / float(b)
-        return render_template('divresult.html', division=division)
+        return render_template('index.html', division=division)
 
 
 if __name__ == '__main__':
